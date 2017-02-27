@@ -9,17 +9,15 @@ int main(void){
 	Struct_Timer Timer_Init_Struct;
 	Timer_Init_Struct.Prescaler_Select	= Division_Factor_1024;
 	Timer_Init_Struct.Interrupt_Set		= Timer_Compare_Enable;
-	
 	Timer_Init(Timer_Init_Struct);
-	
 	Timer_Compare_Value(64);
 	
 	sei();
     while (1){
-		if (Timer_OVERFLOW_Flag >= 64){
-			PORTC ^= 0xFF;
-			Timer_OVERFLOW_Flag = 0;
-		}
+	if (Timer_OVERFLOW_Flag >= 64){
+		PORTC ^= 0xFF;
+		Timer_OVERFLOW_Flag = 0;
+	}
     }
 }
 
