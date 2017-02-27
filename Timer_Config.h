@@ -79,8 +79,8 @@ typedef enum{
 	}interrupt_Sel;
 	
 typedef struct{
-	Clk_Select			Prescaler_Select;
-	interrupt_Sel		Interrupt_Set;
+	Clk_Select	Prescaler_Select;
+	interrupt_Sel	Interrupt_Set;
 	}Struct_Timer;
 	
 void Timer_Init ( Struct_Timer );
